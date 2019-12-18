@@ -3,3 +3,52 @@
     --background:#302D2A;
   }
 
+.header-items
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: center ;
+}
+
+ion-toolbar{
+  padding: 0 !important;
+}
+
+ion-icon[name="arrow-dropleft"]
+{
+  width: 28px;
+  height: 25px;
+  color:#E0D0C1;
+}
+ion-searchbar
+{
+  width: 250px;
+  padding: 0;
+  --background:#FFFFFF;
+}
+ion-icon[name="options"]
+{
+  width: 28px;
+  height: 25px;
+  color:#E0D0C1;
+}
+
+ion-card
+{
+  border-radius: 4px;
+}
+
+.card-content-ios
+{
+  padding-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:52%;
+}
+
+.image-randonnee
+{
+  display:flex;
+  border-radius: 4px 0px 0px 4px;
+  margin-left:0%;
+}
