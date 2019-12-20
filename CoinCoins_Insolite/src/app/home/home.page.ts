@@ -6,28 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  items;
+  isItemAvailable = false;
 
-  selectedCountry: string;//declare global variable
-  countries;
-
-  initializeListCountries(){
-  this.countries = ["Ram","gopi", "dravid"];
+  initializeItems(){
+  this.items = ["Ram","gopi", "dravid"];
   }
 
-  selectCountry(country) {
-      this.selectedCountry = country;
-      console.log(this.selectedCountry);
-  }
+  getItems(ev: any) {
+  // Reset items back to all of the items
+  this.initializeItems();
 
-  search(event) {
-    console.log(event);
-    this.initializeListCountries();
-    console.log(this.countries);
-    const val = event.target.value;
-    if (val && val.trim() != '') {
-        this.countries = this.countries.filter((country) => {
-            return (country.toLowerCase().indexOf(val.toLowerCase()) > -1);
-        })
-      }
-    }
+  // set val to the value of the searchbar
+  const val = ev.target.value;
+
+  // if the value is an empty string don't filter the items
+  if (val && val.trim() != '') {
+  this.isItemAvailable = true;
+  this.items = this.items.filter((item) => {
+  return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+  })
   }
+}
+}

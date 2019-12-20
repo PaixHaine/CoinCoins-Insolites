@@ -3,12 +3,12 @@
     <img src="../../assets/images/coincoins_insolites.svg" alt="Logo CoinCoins Insolite">
   </div>
   <div class="padding">
-    <ion-searchbar class= "align-text" type="text" debounce="500" animated="true"
+    <ion-searchbar class= "align-text" debounce="500"
     placeholder="Enter a city" color="dark"
-    (ionChange)="search($event)"></ion-searchbar>
+    (ionInput)="getItems($event)"></ion-searchbar>
     <ion-list>
-      <ion-item *ngFor="let country of countries" (click)="selectCountry($country)">
-        {{ country }}
+      <ion-item *ngFor="let item of items">
+        {{ item }}
       </ion-item>
     </ion-list>
   </div>
