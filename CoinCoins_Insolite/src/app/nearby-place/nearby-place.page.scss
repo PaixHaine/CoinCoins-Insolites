@@ -38,17 +38,31 @@ ion-card
   border-radius: 4px;
 }
 
-.card-content-ios
+ion-card-content
 {
-  padding-top:0;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:52%;
+  padding: 0 52% 0 0;
 }
 
-.image-randonnee
+.image
 {
   display:flex;
   border-radius: 4px 0px 0px 4px;
   margin-left:0%;
+}
+
+.button {
+  position: absolute;
+  background-color: #302D2A;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  left: 0;
+  right: 0;
+  width: 50%;
+  margin: auto;
+  bottom: 10%;
 }
