@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +10,10 @@ export class HomePage {
   items;
   isItemAvailable = false;
 
+  constructor(private router: Router) {}
+
   initializeItems(){
-    this.items = ["Saint-Nazaire","Nantes", "Vitré", "Saint-André-des-Eaux"];
+    this.items = ["Saint-Nazaire","Nantes", "Vitré", "Saint-André-des-Eaux", "Pepito", "Pepito", "Pepito", "Pepita"];
   }
 
   getItems(ev: any) {
@@ -28,8 +31,14 @@ export class HomePage {
         return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+    this.items = this.items.slice(0, 4);
     if (this.items.length == 0){
       this.isItemAvailable = false;
     }
+  }
+
+  getCity(city) {
+    console.log(city);
+    this.router.navigate(['nearby-place']);
   }
 }
