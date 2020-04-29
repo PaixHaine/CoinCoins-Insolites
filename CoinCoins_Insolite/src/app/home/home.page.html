@@ -4,9 +4,9 @@
   </div>
   <div class="padding">
     <ion-searchbar class= "align-text" debounce="500"
-    placeholder="Enter a city" color="dark"
+    placeholder="Enter a city" color="light"
     (ionInput)="getItems($event)"></ion-searchbar>
-    <ion-list>
+    <ion-list [ngClass]="{'hide': isItemAvailable == false}">
       <ion-item *ngFor="let item of items">
         {{ item }}
       </ion-item>

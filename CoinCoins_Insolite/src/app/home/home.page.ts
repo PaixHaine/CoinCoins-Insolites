@@ -10,22 +10,26 @@ export class HomePage {
   isItemAvailable = false;
 
   initializeItems(){
-  this.items = ["Ram","gopi", "dravid"];
+    this.items = ["Saint-Nazaire","Nantes", "Vitré", "Saint-André-des-Eaux"];
   }
 
   getItems(ev: any) {
-  // Reset items back to all of the items
-  this.initializeItems();
-
-  // set val to the value of the searchbar
-  const val = ev.target.value;
-
-  // if the value is an empty string don't filter the items
-  if (val && val.trim() != '') {
-  this.isItemAvailable = true;
-  this.items = this.items.filter((item) => {
-  return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-  })
+    // Reset items back to all of the items
+    this.initializeItems();
+    // set val to the value of the searchbar
+    const val = ev.target.value;
+    // if the value is an empty string don't filter the items
+    if (val == ''){
+      this.isItemAvailable = false;
+    }
+    if (val && val.trim() != '') {
+      this.isItemAvailable = true;
+      this.items = this.items.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+    if (this.items.length == 0){
+      this.isItemAvailable = false;
+    }
   }
-}
 }
