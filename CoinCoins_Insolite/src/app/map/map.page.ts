@@ -36,8 +36,8 @@ export class MapPage implements OnInit {
     }).addTo(map);
 
     const customMarkerIcon = icon({
-      iconUrl: 'assets/images/custom-marker-icon.png',
-      iconSize: [64, 64], 
+      iconUrl: 'assets/icon/favicon.png',
+      iconSize: [64, 64],
       popupAnchor: [0, -20]
     });
 
