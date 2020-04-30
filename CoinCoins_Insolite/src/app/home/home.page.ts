@@ -45,6 +45,6 @@ export class HomePage {
         city
       }
     };
-    this.router.navigate(['nearby-place'], navigationExtras);
+    this.router.navigate(['map'], navigationExtras);
   }
 }
