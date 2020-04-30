@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
+import { CityService } from '../services/city.service';
+import { FileCity } from '../interface/filecity';
+import { City } from '../interface/city';
 
 @Component({
   selector: 'app-home',
@@ -9,36 +12,39 @@ import { Router } from '@angular/router';
 export class HomePage {
   items;
   isItemAvailable = false;
+  city: City;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private city_api: CityService) {}
 
-  initializeItems(){
-    this.items = ["Saint-Nazaire","Nantes", "Vitré", "Saint-André-des-Eaux", "Pepito", "Pepito", "Pepito", "Pepita"];
+  public showConfig(city_name: string) {
+    return this.city_api.getConfig(city_name).subscribe((resp: FileCity) =>
+     {
+      this.items = resp.features;
+       return this.items;
+    });
   }
 
   getItems(ev: any) {
-    // Reset items back to all of the items
-    this.initializeItems();
-    // set val to the value of the searchbar
     const val = ev.target.value;
-    // if the value is an empty string don't filter the items
     if (val == ''){
       this.isItemAvailable = false;
     }
     if (val && val.trim() != '') {
+      this.showConfig(val);
+      this.items = this.items.slice(0, 4);
       this.isItemAvailable = true;
-      this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
     }
-    this.items = this.items.slice(0, 4);
     if (this.items.length == 0){
       this.isItemAvailable = false;
     }
   }
 
   getCity(city) {
-    console.log(city);
-    this.router.navigate(['nearby-place']);
+    let navigationExtras: NavigationExtras = {
+      state: {
+        city
+      }
+    };
+    this.router.navigate(['nearby-place'], navigationExtras);
   }
 }

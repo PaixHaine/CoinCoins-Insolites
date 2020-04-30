@@ -8,7 +8,7 @@
     (ionInput)="getItems($event)"></ion-searchbar>
     <ion-list [ngClass]="{'hide': isItemAvailable == false}">
       <ion-item *ngFor="let item of items" (click)="getCity(item)">
-        <ion-label>{{ item }}</ion-label>
+        <ion-label>{{ item["properties"]["city"] }} {{ item["properties"]["citycode"] }}</ion-label>
       </ion-item>
     </ion-list>
   </div>
