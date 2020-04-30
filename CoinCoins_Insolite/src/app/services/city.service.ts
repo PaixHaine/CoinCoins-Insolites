@@ -11,7 +11,7 @@ export class CityService {
 
   constructor(private http: HttpClient) { }
 
-  public getUrl(city_name: string,): string
+  private getUrl(city_name: string,): string
     {
         let apiUrl = environment.city.baseUrl;
         let querySeparator = (apiUrl.indexOf('?') != -1)
