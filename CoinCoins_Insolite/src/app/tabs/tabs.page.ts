@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { faIgloo } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-tabs',
@@ -8,5 +10,6 @@ import { Component } from '@angular/core';
 export class TabsPage {
 
   constructor() {}
+  faIgloo = faIgloo;
 
 }
