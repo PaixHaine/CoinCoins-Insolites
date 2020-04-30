@@ -1,14 +1,15 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <div class="logo">
+    <img src="../../assets/images/coincoins_insolites.svg" alt="Logo CoinCoins Insolite">
+  </div>
+  <div class="padding">
+    <ion-searchbar class= "align-text" debounce="500"
+    placeholder="Enter a city" color="light"
+    (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list [ngClass]="{'hide': isItemAvailable == false}">
+      <ion-item *ngFor="let item of items" (click)="getCity(item)">
+        <ion-label>{{ item["properties"]["city"] }} {{ item["properties"]["citycode"] }}</ion-label>
+      </ion-item>
+    </ion-list>
   </div>
 </ion-content>
