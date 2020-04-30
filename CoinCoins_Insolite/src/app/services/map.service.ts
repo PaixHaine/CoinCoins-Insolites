@@ -27,25 +27,25 @@ export class MapService {
     let places =
     [
       {
-        "title":"Le Louvre",
-        "city_name":"Paris",
-        "image":"assets/images/louvre.jpeg",
+        "title": "Le Louvre",
+        "city_name": "Paris",
+        "image": "assets/images/louvre.jpeg",
         "position":
         {"lat":48.864824,
         "lgn":2.334595},
       },
       {
         "title": "Deyrolle",
-        "city_name":"Paris",
-        "image":"assets/images/deyrolle.jpg",
+        "city_name": "Paris",
+        "image": "assets/images/deyrolle.jpg",
         "position":
         {"lat":48.8565418,
         "lgn":2.3264705},
       },
       {
-        "title":"Cour du Commerce Saint-André",
-        "city_name":"Paris",
-        "image":"assets/images/courducommerce.jpg",
+        "title": "Cour du Commerce Saint-André",
+        "city_name": "Paris",
+        "image": "assets/images/courducommerce.jpg",
         "position":
         {"lat":48.8530736,
         "lgn":2.3390876},
@@ -60,7 +60,6 @@ export class MapService {
   }
 
   private initMap(places, lat_city, lng_city) {
-    console.log(lat_city, lng_city)
     const map = new Map('map').setView([lat_city, lng_city], 10);
     tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
