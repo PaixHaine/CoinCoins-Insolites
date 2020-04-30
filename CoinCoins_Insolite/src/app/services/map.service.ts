@@ -3,7 +3,8 @@ import { map } from 'rxjs/operators';
 import { Platform } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { Map, tileLayer, marker, icon } from 'leaflet';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -59,7 +60,8 @@ export class MapService {
   }
 
   private initMap(places, lat_city, lng_city) {
-    const map = new Map('map').setView([lat_city, lng_city], 20);
+    console.log(lat_city, lng_city)
+    const map = new Map('map').setView([lat_city, lng_city], 10);
     tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
