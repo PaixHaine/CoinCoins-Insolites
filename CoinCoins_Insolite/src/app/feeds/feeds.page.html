@@ -1,7 +1,6 @@
-
 <!-- HEADER -->
 
-<ion-header>
+<ion-header no-border>
   <ion-toolbar class="insta-feed-header">
     <ion-buttons slot="start">
       <ion-avatar class="header-avatar">
@@ -21,17 +20,23 @@
 
   <!-- CATEGORIES TAB -->
 
-  <ion-segment scrollable mode="md">
-      <ion-segment-button value="0" mode="md" checked >
-        <ion-text class="text-categories">Editorial</ion-text>
-      </ion-segment-button>
-      <ion-segment-button mode="md" *ngFor="let status of categories" >
-        <ion-text class="text-categories">{{status.name}}</ion-text>
-      </ion-segment-button>
+  <ion-segment class="categoriestab" scrollable mode="md">
+    <ion-segment-button value="0" mode="md" checked>
+      <ion-text class="text-categories ">Editorial</ion-text>
+    </ion-segment-button>
+    <ion-segment-button mode="md" *ngFor="let status of categories">
+      <ion-text class="text-categories">{{status.name}}</ion-text>
+    </ion-segment-button>
 
   </ion-segment>
 
   <!--  -->
+
+<ion-card class="searchContainer">
+  <ion-card-content>
+    <ion-text class="titleContainer"><span id="colorTitle">C</span>oin<span id="colorTitle">C</span>oin<br>Insolites</ion-text>
+  </ion-card-content>
+</ion-card>
 
   <!-- FEED -->
 
@@ -44,7 +49,6 @@
       </div>
       <div class="user-details">
         <p class="user-name">{{feed.userName}}</p>
-        <p class="user-place">{{feed.userPlace}}</p>
       </div>
       <!-- <ion-buttons slot="end">
         <ion-button>
@@ -52,13 +56,16 @@
         </ion-button>
       </ion-buttons> -->
     </ion-card-content>
-    
+
     <!--  -->
 
     <!-- IMAGES SLIDE -->
-    
-    <div class="feed-slides-wrapper">
 
+    <div class="feed-slides-wrapper">
+      <div class="place">
+        <fa-icon class="user-place-icon" [icon]="faMapMarkerAlt"></fa-icon>
+        <label class="user-place">{{feed.userPlace}}</label><!-- <p >{{feed.userPlace}}</p> -->
+      </div>
       <ion-slides pager="true" [options]="slideOpts" class="feed-slides">
         <ion-slide *ngFor="let slide of feed.slides">
           <img [src]="slide.image" />
@@ -78,8 +85,11 @@
             <ion-icon name="add"></ion-icon>
           </ion-button>
           <ion-button>
-            <ion-icon name="map"></ion-icon>
+            <fa-icon [icon]="faMapMarkedAlt"></fa-icon>
           </ion-button>
+          <!-- <ion-button>
+            <ion-icon name="map"></ion-icon>
+          </ion-button> -->
         </ion-buttons>
 
         <!-- <ion-buttons class="ion-float-right">
@@ -96,7 +106,7 @@
     <!-- PUBLICATION DESCRIPTION -->
 
     <ion-card-content class="feed-details-container">
-      <p> <strong>{{feed.likes}} likes</strong> </p>
+      <!-- <p> <strong>{{feed.likes}} likes</strong> </p>
       <p class="user-given-details">
         <ion-avatar>
           <img [src]="feed.userImage">
@@ -106,9 +116,9 @@
         <span class="grey-text"> more</span>
       </p>
       <p class="all-comments"> <span class="grey-text">View All Comments</span></p>
-      <p class="post-time"> <span class="grey-text">{{feed.time}}</span></p>
+      <p class="post-time"> <span class="grey-text">{{feed.time}}</span></p> -->
     </ion-card-content>
-    
+
     <!--  -->
   </ion-card>
 

@@ -1,4 +1,8 @@
 import { Component } from "@angular/core";
+import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+
+
 
 @Component({
   selector: "app-feeds",
@@ -54,20 +58,16 @@ export class FeedsPage {
     {
       userName: "Lisa Bowman",
       userImage: "../../assets/img/femme1.png",
-      userPlace: "Mount Rushmore National Memorial",
+      userPlace: "Somewhere in California",
       slides: [
         {
           image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSVd57Rh4SLipxD_I4ikAjXk4A6B9b69SoyoiKa0Y3YC-Vc31iC",
+          "../../assets/img/publication3.jpg",
         },
         {
           image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT2XXwZeGmG2LjAYFwnFS0KgHmHo0GP8pp2_VIKMYA_lYW79t43",
-        },
-        {
-          image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQnoRsDHvSC2mYgY2HDNgMrkW3vPWO5b1P--snWW-ZGSah71MaL",
-        },
+          "../../assets/img/publication4.jpg",
+        }
       ],
       likes: 120,
       feedText: "Lovely places",
@@ -81,4 +81,7 @@ export class FeedsPage {
   };
 
   constructor() {}
+  faMapMarkedAlt = faMapMarkedAlt;
+  faMapMarkerAlt = faMapMarkerAlt;
+
 }
