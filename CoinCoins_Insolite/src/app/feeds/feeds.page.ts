@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { HomePage } from '../home/home.page';
+
 
 
 
@@ -80,8 +82,9 @@ export class FeedsPage {
     speed: 400,
   };
 
-  constructor() {}
+  constructor(private home: HomePage) {}
   faMapMarkedAlt = faMapMarkedAlt;
   faMapMarkerAlt = faMapMarkerAlt;
+
 
 }

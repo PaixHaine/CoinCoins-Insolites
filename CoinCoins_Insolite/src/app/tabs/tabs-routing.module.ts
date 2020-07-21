@@ -13,7 +13,7 @@ const routes: Routes = [
                     {
                         path: '',
                         loadChildren: () =>
-                            import('../feeds/feeds.module').then(m => m.FeedsModule)
+                        import('../feeds/feeds.module').then(m => m.FeedsModule)
                     }
                 ]
             },
@@ -23,7 +23,7 @@ const routes: Routes = [
                     {
                         path: '',
                         loadChildren: () =>
-                            import('../search/search.module').then(m => m.SearchModule)
+                        import('../search/search.module').then(m => m.SearchModule)
                     }
                 ]
             },
@@ -33,7 +33,7 @@ const routes: Routes = [
                     {
                         path: '',
                         loadChildren: () =>
-                            import('../newpost/newpost.module').then(m => m.NewpostModule)
+                        import('../newpost/newpost.module').then(m => m.NewpostModule)
                     }
                 ]
             },
@@ -43,7 +43,7 @@ const routes: Routes = [
                     {
                         path: '',
                         loadChildren: () =>
-                            import('../activities/activities.module').then(m => m.ActivitiesModule)
+                        import('../activities/activities.module').then(m => m.ActivitiesModule)
                     }
                 ]
             },
@@ -53,7 +53,25 @@ const routes: Routes = [
                     {
                         path: '',
                         loadChildren: () =>
-                            import('../profile/profile.module').then(m => m.ProfileModule)
+                        import('../profile/profile.module').then(m => m.ProfileModule)
+                    }
+                ]
+            },
+            {
+                path: 'home',
+                children: [
+                    {
+                        path: '', loadChildren: () =>
+                        import('../home/home.module').then( m => m.HomePageModule)
+                    }
+                ]
+            },
+            {
+                path: 'map',
+                children: [
+                    {
+                        path: '', loadChildren: () =>
+                        import('../map/map.module').then( m => m.MapPageModule)
                     }
                 ]
             },
