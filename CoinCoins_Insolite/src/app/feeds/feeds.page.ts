@@ -82,9 +82,8 @@ export class FeedsPage {
     speed: 400,
   };
 
-  constructor(private home: HomePage) {}
+  constructor() {}
   faMapMarkedAlt = faMapMarkedAlt;
   faMapMarkerAlt = faMapMarkerAlt;
-
 
 }
