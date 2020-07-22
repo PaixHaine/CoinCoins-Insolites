@@ -13,7 +13,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faIgloo } from '@fortawesome/free-solid-svg-icons';
-import { HomePage } from './home/home.page';
 
 
 
@@ -26,7 +25,6 @@ library.add(faIgloo);
   providers: [
     StatusBar,
     SplashScreen,
-    HomePage,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

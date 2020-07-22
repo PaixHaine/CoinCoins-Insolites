@@ -1,8 +1,6 @@
 import { Component } from "@angular/core";
 import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import { HomePage } from '../home/home.page';
-
 
 
 

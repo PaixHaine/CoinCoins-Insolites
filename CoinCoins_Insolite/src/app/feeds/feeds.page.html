@@ -36,15 +36,6 @@
   <ion-card-content>
     <ion-text class="titleContainer"><span id="colorTitle">C</span>oin<span id="colorTitle">C</span>oin<br>Insolites</ion-text>
   </ion-card-content>
-  <div class="padding">
-    <ion-searchbar class= "align-text" debounce="500"
-    placeholder="Enter a city" color="light" (ionInput) ="home.getItems($event)" ></ion-searchbar>
-    <ion-list [ngClass]="{'hide': isItemAvailable == false}">
-      <ion-item *ngFor="let item of items" (click)="home.getCity(item)">
-        <ion-label>{{ item["properties"]["city"] }} {{ item["properties"]["citycode"] }}</ion-label>
-      </ion-item>
-    </ion-list>
-  </div>
 </ion-card>
 
   <!-- FEED -->
