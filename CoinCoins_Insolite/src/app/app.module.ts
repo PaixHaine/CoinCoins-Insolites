@@ -14,6 +14,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faIgloo } from '@fortawesome/free-solid-svg-icons';
 import { HomePage } from './home/home.page';
+import { Camera } from '@ionic-native/camera/ngx';
+
 
 
 
@@ -27,6 +29,7 @@ library.add(faIgloo);
     StatusBar,
     SplashScreen,
     HomePage,
+    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
