@@ -16,7 +16,7 @@ export class HomePage {
 
   constructor(private router: Router, private city_api: CityService) {}
 
-  private showConfig(city_name: string) {
+  public showConfig(city_name: string) {
     return this.city_api.getConfig(city_name).subscribe((resp: FileCity) =>
      {
       this.items = resp.features;
@@ -24,7 +24,8 @@ export class HomePage {
     });
   }
 
-  private getItems(ev: any) {
+  public getItems(ev: any) {
+
     const val = ev.target.value;
     if (val == ''){
       this.isItemAvailable = false;
@@ -39,12 +40,12 @@ export class HomePage {
     }
   }
 
-  private getCity(city) {
+  public getCity(city) {
     let navigationExtras: NavigationExtras = {
       state: {
         city
       }
     };
-    this.router.navigate(['map'], navigationExtras);
+    this.router.navigate(['tabs/map'], navigationExtras);
   }
 }

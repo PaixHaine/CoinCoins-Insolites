@@ -53,7 +53,25 @@ const routes: Routes = [
                     {
                         path: '',
                         loadChildren: () =>
-                            import('../profile/profile.module').then(m => m.ProfileModule)
+                        import('../profile/profile.module').then(m => m.ProfileModule)
+                    }
+                ]
+            },
+            {
+                path: 'home',
+                children: [
+                    {
+                        path: '', loadChildren: () =>
+                        import('../home/home.module').then( m => m.HomePageModule)
+                    }
+                ]
+            },
+            {
+                path: 'map',
+                children: [
+                    {
+                        path: '', loadChildren: () =>
+                        import('../map/map.module').then( m => m.MapPageModule)
                     }
                 ]
             },
