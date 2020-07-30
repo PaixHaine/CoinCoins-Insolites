@@ -1,4 +1,4 @@
-<h1>App CA Coins Coins Insolite</h1>
+<h1>Coin Coins Insolites</h1>
 
 Projet réalisé par :
 - Baptiste Bouriau ([BouriauB](https://github.com/BouriauB))
