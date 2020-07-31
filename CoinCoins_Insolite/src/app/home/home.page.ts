@@ -10,7 +10,7 @@ import { City } from '../interface/city';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  items;
+  items: any[] = [];
   isItemAvailable = false;
   city: City;
 
