@@ -15,7 +15,6 @@ export class MapPage implements OnInit {
   constructor(private router: Router, private map: MapService) {
       if (this.router.getCurrentNavigation().extras.state) {
         this.data = this.router.getCurrentNavigation().extras.state.city;
-        console.log(this.data);
       }
     }
 
