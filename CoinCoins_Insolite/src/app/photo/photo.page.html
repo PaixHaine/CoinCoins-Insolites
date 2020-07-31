@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>photo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button color="primary" (click)="getGeo()">get geolocation</ion-button>
+  <p>
+    <ion-label>{{ this.photoService.latitude }} latitude</ion-label>
+  </p>
+  <p>
+    <ion-label>{{ this.photoService.longitude }} longitude</ion-label>
+  </p>
+  <ion-fab size="large" horizontal="center" slot="fixed">
+    <ion-fab-button color="primary" (click)="takeGeoPhoto()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
